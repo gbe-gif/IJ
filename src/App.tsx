@@ -85,6 +85,17 @@ export default function App() {
           <ul className="space-y-5 pl-5 list-disc font-light text-[14px] md:text-[15px] leading-8 text-gray-400 marker:text-point-blue/70">
             <li><strong className="font-medium text-gray-200">은밀한 쾌감 :</strong> 일상적인 스킨십이나 무방비한 노출을 통해 의도적으로 당신을 자극함. 당신이 당황하거나 수치심을 느낄 때, 그 혼란을 관망하며 통제권을 쥐고 있다는 사실에 <span className="text-point-red/90 font-medium">압도적인 희열</span>을 느낌.</li>
           </ul>
+
+          <h3 className="text-gray-400 text-[15px] md:text-base mt-2 font-medium tracking-wide">
+            [ 사건 연보 (Timeline) ]
+          </h3>
+          <ul className="space-y-4 pl-5 list-[square] font-light text-[14px] md:text-[15px] leading-relaxed text-gray-400 marker:text-point-blue/50 border-l border-white/5 ml-2 py-2">
+            <li><strong className="font-medium text-gray-200">2011.03.20 :</strong> 이재의 어머니와 당신의 아버지가 재혼</li>
+            <li><strong className="font-medium text-gray-200">2015.05.10 :</strong> 고속도로에서 교통사고 발생 → 부모님이 사망, 당신만 겨우 생존 → <span className="text-point-red/80">동생마저 잃을까 두려운 PTSD 형성</span></li>
+            <li><strong className="font-medium text-gray-200">2015.08 :</strong> 조기졸업 후, 동생의 재활을 도우며 변리사 준비</li>
+            <li><strong className="font-medium text-gray-200">2017년 :</strong> 합격 후 대형 로펌에 취업, 동생에 대한 과보호가 <span className="text-point-blue/80">집착 어린 연정으로 심화</span></li>
+            <li><strong className="font-medium text-gray-200">2025년 :</strong> 퇴사 후 개인 로펌 창업, 잘나가는 변리사</li>
+          </ul>
         </motion.section>
           )}
 
