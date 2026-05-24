@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<1 | 2>(1);
+  const [currentPage, setCurrentPage] = useState<1 | 2 | 3>(1);
   return (
     <div className="min-h-screen bg-dark text-light-text font-sans p-5 md:p-10 flex justify-center selection:bg-point-blue/30 selection:text-white">
       <div className="w-full max-w-[800px] flex flex-col gap-8 overflow-hidden">
@@ -127,6 +127,35 @@ export default function App() {
           </ul>
             </motion.section>
           )}
+
+          {currentPage === 3 && (
+            <motion.section
+              key="page3"
+              id="gallery"
+              initial={{ opacity: 0, x: 10, filter: "blur(4px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: -10, filter: "blur(4px)" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex flex-col gap-6"
+            >
+              <h2 className="text-white font-serif text-xl md:text-2xl border-l-[3px] border-point-red pl-3 font-semibold tracking-widest flex items-center h-8">
+                ◆ 수록 이미지
+              </h2>
+              
+              <div className="flex flex-col gap-8 my-4">
+                {Array.from({ length: 32 }, (_, i) => i + 1).map((num) => (
+                  <figure key={num} className="relative overflow-hidden rounded-md border border-white/5 shadow-lg bg-dark-surface/50 p-2 flex justify-center">
+                    <img 
+                      src={`https://gbe88.uk/A/${num}.webp`} 
+                      alt={`수록 이미지 ${num}`}
+                      className="max-w-full h-auto block mx-auto transition-transform duration-700 hover:scale-[1.01]"
+                      loading="lazy"
+                    />
+                  </figure>
+                ))}
+              </div>
+            </motion.section>
+          )}
         </AnimatePresence>
 
         {/* Footer Navigation */}
@@ -139,7 +168,7 @@ export default function App() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           
           <button 
-            onClick={() => setCurrentPage(1)}
+            onClick={() => setCurrentPage(Math.max(1, currentPage - 1) as 1 | 2 | 3)}
             disabled={currentPage === 1}
             className={`flex items-center gap-1.5 transition-colors duration-300 px-2 py-1 ${currentPage === 1 ? 'text-dark-border cursor-not-allowed' : 'text-muted-text hover:text-white group'}`}
           >
@@ -162,17 +191,20 @@ export default function App() {
             >
               2. 배경
             </button>
-            <button className="text-point-blue/40 hover:text-point-blue/60 transition-all duration-300 px-2 py-1 cursor-not-allowed">
-              3. 규칙 <span className="text-[10px] opacity-70 ml-1 font-mono tracking-tighter">(Update)</span>
+            <button 
+              onClick={() => setCurrentPage(3)}
+              className={`transition-all duration-300 px-2 py-1 ${currentPage === 3 ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' : 'text-point-blue/80 hover:text-point-blue hover:drop-shadow-[0_0_8px_rgba(90,106,126,0.6)]'}`}
+            >
+              3. 갤러리
             </button>
           </div>
           
           <div className="hidden sm:block text-dark-border select-none">|</div>
           
           <button 
-            onClick={() => setCurrentPage(2)}
-            disabled={currentPage === 2}
-            className={`flex items-center gap-1.5 transition-colors duration-300 px-2 py-1 ${currentPage === 2 ? 'text-dark-border cursor-not-allowed' : 'text-light-text hover:text-white group'}`}
+            onClick={() => setCurrentPage(Math.min(3, currentPage + 1) as 1 | 2 | 3)}
+            disabled={currentPage === 3}
+            className={`flex items-center gap-1.5 transition-colors duration-300 px-2 py-1 ${currentPage === 3 ? 'text-dark-border cursor-not-allowed' : 'text-light-text hover:text-white group'}`}
           >
             <span>다음 페이지</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
