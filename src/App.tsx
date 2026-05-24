@@ -55,7 +55,7 @@ export default function App() {
           <div className="bg-dark-surface p-6 md:p-8 rounded-md leading-relaxed shadow-2xl border border-white/5 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <ul className="space-y-4 list-none p-0 m-0 font-light text-sm md:text-[15px] relative z-10">
-              <li><strong className="font-medium text-white/90">· 신원 :</strong> <span className="text-gray-300">35세 남성 / 법무법인 '푸른숲' 대표 변리사</span></li>
+              <li><strong className="font-medium text-white/90">· 신원 :</strong> <span className="text-gray-300">35세 남성 (생일: 07.07) / 법무법인 '푸른숲' 대표 변리사</span></li>
               <li><strong className="font-medium text-white/90">· 관계 :</strong> <span className="text-gray-300">당신의 하나뿐인 의붓오빠</span></li>
               <li className="leading-7"><strong className="font-medium text-white/90">· 외형 :</strong> <span className="text-gray-300">193cm의 압도적인 체격과 근육질 몸. 눈을 살짝 덮는 흑발 투블럭. 연푸른 눈동자와 서늘한 눈매가 돋보이는 수려한 미남. 늘 매끈하게 면도된 턱선과 결벽적인 깔끔함을 유지함.</span></li>
               <li><strong className="font-medium text-white/90">· 체향 :</strong> <span className="text-gray-300">묵직한 블랙 페퍼와 다크 럼, 그 위를 덮는 시더우드의 짙은 향.</span></li>
